@@ -6,9 +6,9 @@
     animation: intro 6s ease-out 1s;
     color: rgb(75, 213, 238);
     font-weight: 400;
-    font-size: 300%;
+    font-size: 250%;
     opacity: 0;
-    font-family: 'starjedi', sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .openingCrawlContainer { 
