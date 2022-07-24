@@ -59,11 +59,14 @@
   font-size: 22px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   background-color: rgb(250, 250, 250, 0.1);
+  box-shadow: inset 0px 0px 8px rgb(245, 227, 128);
+  border: none;
   color: #f9d71c;
   width: 150px;
   height: 64px;
   margin: 0 auto;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 669px) {

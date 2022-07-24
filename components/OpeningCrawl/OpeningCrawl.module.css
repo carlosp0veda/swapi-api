@@ -122,14 +122,14 @@
 
     .board {
         width: 100%;
-        font-size: 250%;
-        left: 16%;
-        transform:  translateX(-8%);
+        font-size: 200%;
+        left: 10%;
+        transform:  translateX(-5%);
         perspective: 400px;
     }
-    .content {
+    /* .content {
         animation: scroll 50s linear 12s;
-    }
+    } */
 
     .intro {
         top: 15%;
@@ -138,6 +138,6 @@
     .logo {
         left: 15%;
         top: 10%;
-        animation: logo 8s ease-out 8s;
+        /* animation: logo 7s ease-out 7s; */
     }
 }

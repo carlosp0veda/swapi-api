@@ -11,6 +11,7 @@ export default function Document() {
       type="font/woff"
       crossOrigin=""
       /> */}
+      <link rel="shortcut icon" href="/star-wars.ico"/>
       </Head>
       <body>
         <Main />

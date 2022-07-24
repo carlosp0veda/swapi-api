@@ -1,5 +1,5 @@
 .container {
-    width: min(128px, 350px);
+    width: clamp(128px, 250px ,350px);
     height: 64px;
     display: flex;
     background-color: #1e272e;
@@ -18,13 +18,13 @@
   /*   display: inline; */
     background: none;
     color: #f7f7f7;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     border-radius: 2rem;
     outline: none;
     border: none;
     position: relative;
     opacity: 1;
-    transition: all .75s ease-in;
+    transition: all .5s ease-in;
     cursor: text;
   /*   border: 2px solid tomato; */
   /*   margin-top: 5px; */
@@ -69,5 +69,8 @@
 
     .container {
         height: 50px;
+    }
+    .searchBoxWrapper {
+        padding-left: 16px;
     }
 }
