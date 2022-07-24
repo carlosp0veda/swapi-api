@@ -9,8 +9,9 @@
 .navLink {
     list-style: none;
     text-align: center;
+    color: #fff;
     width: 100%;
-    font-size: 2rem;
+    font-size: 1.5rem;
     cursor: pointer;
     font-family:'starjedi', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border: 1px solid white;
@@ -21,5 +22,5 @@
 }
 
 .navLink:hover{
-    box-shadow: inset 0px 0px 12px rgb(255, 255, 255);
+    box-shadow: inset 0px 0px 8px rgb(255, 255, 255);
 }
