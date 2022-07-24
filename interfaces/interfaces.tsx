@@ -40,7 +40,7 @@ export interface CharacterImage {
     image: string,
 }
 
-export interface GlobalState<TData> {
+export interface GlobalState {
     characters: {
       count: number,
       next: string | null,
