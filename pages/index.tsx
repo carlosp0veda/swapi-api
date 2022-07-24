@@ -79,6 +79,7 @@ const Home = (props: HomePageProps) => {
 
   return (
       <section className={styles.main}>
+        {!isLoading && !isOpeningCrawl && selectedEpisode ? <h2>{`${selectedEpisode.title} characters`}</h2> : null}
        {!isLoading && !isOpeningCrawl ? <div><CharacterGrid characters={state.characters.slice(0, visibleResults)} images={state.images}/> {visibleResults < state.characters.length && <div className={styles.loadMoreContainer}>
     <button
       className={styles.loadMoreButton}

@@ -128,8 +128,8 @@
     .board {
         width: 100%;
         font-size: 200%;
-        left: 10%;
-        transform:  translateX(-5%);
+        left: 8%;
+        transform:  translateX(-4%);
         perspective: 400px;
     }
     .content {
