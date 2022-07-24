@@ -15,6 +15,7 @@
 .characterInfo {
     display: flex;
     flex-flow: column;
+    color: #fff;
 }
 
 .desktopCharacterName, .mobileCharacterName {
