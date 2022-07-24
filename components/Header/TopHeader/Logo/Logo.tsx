@@ -6,7 +6,7 @@ import Image from 'next/image'
 const Logo = () => {
   return (
     <div className={styles.logoContainer}>
-        <Link href='/'>
+        <Link href={{pathname: '/', query:{}}}>
             <a>
                 <Image src='https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg' alt='Logo' width={192} height={128}/>
             </a>

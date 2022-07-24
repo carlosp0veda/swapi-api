@@ -27,8 +27,15 @@ const Home = (props: HomePageProps) => {
   const [visibleResults, setVisibleResults] = useState<number>(12);
 
   const router = useRouter()
-
-  useEffect(()=>{console.log(state)},[state])
+   
+  const fetchSearch = useCallback(async () => {
+    if (router.query.search) {
+    setIsLoading(true)
+    const searchResults =  await axios.get(`https://swapi.dev/api/people/?search=${router?.query?.search}`).then(res => res.data).catch(e => new Error(e)).finally(() => setIsLoading(false))
+    const resolvedPromise = await Promise.resolve(searchResults)
+    setSearchResults(resolvedPromise.results)
+    }
+  }, [router.query.search])
 
   useEffect(()=> {
     if (searchResults){
@@ -38,14 +45,13 @@ const Home = (props: HomePageProps) => {
     }
   },[props.characters, searchResults])
 
-  const fetchSearch = useCallback(async () => {
-    if (router.query.search) {
-    setIsLoading(true)
-    const searchResults =  await axios.get(`https://swapi.dev/api/people/?search=${router?.query?.search}`).then(res => res.data).catch(e => new Error(e)).finally(() => setIsLoading(false))
-    const resolvedPromise = await Promise.resolve(searchResults)
-    setSearchResults(resolvedPromise.results)
+  useEffect(()=>{
+    if (selectedEpisode){
+      setIsOpeningCrawl(true)
+      const crawlTimeout = setTimeout(() => setIsOpeningCrawl(false), 45000)
+      return () => clearTimeout(crawlTimeout)
     }
-  }, [router.query.search])
+  },[selectedEpisode])
 
   useEffect(()=> {
     setSelectedEpisode(null)
@@ -66,14 +72,6 @@ const Home = (props: HomePageProps) => {
     }
     setIsLoading(false)
   },[router?.query, props.films, props.characters, fetchSearch])
-
-  useEffect(()=>{
-    if (selectedEpisode){
-      setIsOpeningCrawl(true)
-      const crawlTimeout = setTimeout(() => setIsOpeningCrawl(false), 45000)
-      return () => clearTimeout(crawlTimeout)
-    }
-  },[selectedEpisode])
 
   const loadMoreItems = () => {
     setVisibleResults((prev) => prev + 12);

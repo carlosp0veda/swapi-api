@@ -127,9 +127,9 @@
         transform:  translateX(-5%);
         perspective: 400px;
     }
-    /* .content {
-        animation: scroll 50s linear 12s;
-    } */
+    .content {
+        animation: scroll 50s linear 16s;
+    }
 
     .intro {
         top: 15%;
