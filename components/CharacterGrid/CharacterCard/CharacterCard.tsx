@@ -20,7 +20,6 @@ const CharacterCard = ({character, image}:CharacterCardProps) => {
             setHomeplanet(data.name)
         }
     },[data])
-    
 
   return (
     <>

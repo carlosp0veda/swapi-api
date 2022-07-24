@@ -58,7 +58,7 @@ const Character = ({character, image}: CharacterPageProps) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const data = await getAllCharacters()
-  console.log(data);
+  
 return {
   paths: data.map(item => ({params:{character:item.name.toLowerCase().replace(/\s/g, '%20')}}))
   ,
