@@ -1,0 +1,10 @@
+.logoContainer {
+    display: block;
+    position: relative;
+    width: 150;
+    height: 150;
+    align-items: center;
+    align-content: center;
+    margin: 0 auto;
+    overflow: hidden;
+}

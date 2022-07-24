@@ -1,0 +1,68 @@
+.characterContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.characterCard {
+    display: grid;
+    grid-auto-flow: column;
+    padding: 32px 0;
+    place-items: center;
+}
+
+.characterInfo {
+    display: flex;
+    flex-flow: column;
+}
+
+.desktopCharacterName, .mobileCharacterName {
+    color: #f9d71c;
+}
+
+.mobileCharacterName {
+    display: none;
+    padding-bottom: 16px;
+}
+
+.imageWrapper {
+    margin: 0 32px;
+    height: 450px;
+    box-shadow: 0px 0px 8px rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.link {
+    cursor: pointer;
+    padding: 4px 0;
+    text-decoration: underline;
+}
+
+.link:hover {
+    color: #f9d71c;
+}
+
+.contentText {
+    color: #9e4f60;
+}
+
+.contentTitle {
+    color: #ddd;
+}
+
+@media screen and (max-width: 669px) {
+
+    .characterCard {
+        grid-auto-flow: row;
+    }
+
+    .desktopCharacterName {
+       display: none;
+    }
+    
+    .mobileCharacterName {
+        display: block;
+    }
+
+}

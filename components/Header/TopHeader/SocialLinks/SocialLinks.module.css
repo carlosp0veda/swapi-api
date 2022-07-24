@@ -1,0 +1,21 @@
+.links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+}
+
+.kidsContainer {
+  height: 24px;
+  background-color: #999999;
+  padding: 0 4px;
+  border-radius: 6px;
+}
+
+
+@media screen and (max-width: 669px) {
+
+    .SocialLinksContainer {
+        display: none ;
+    }
+}

@@ -15,6 +15,27 @@ a {
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "Star Jedi";
+  src: url('../public/fonts/StarJedi-DGRW.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+  
+/* @font-face {
+  font-family: "Star Jedi Hollow";
+  src: url('../fonts/StarJediHollow-A4lL.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+  
+@font-face {
+  font-family: "Star Jedi Rounded";
+  src: url('../fonts/StarJediRounded-jW3R.ttf');
+  font-weight: normal;
+  font-style: italic;
+} */
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

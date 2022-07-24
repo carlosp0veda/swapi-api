@@ -1,0 +1,19 @@
+.navGrid {
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    border: 2px solid white;
+}
+
+.navLink {
+    list-style: none;
+    text-align: center;
+    width: 100%;
+    font-size: 2rem;
+    cursor: pointer;
+    font-family: 'Star Jedi', sans-serif;
+    border: 1px solid white;
+    
+    
+}

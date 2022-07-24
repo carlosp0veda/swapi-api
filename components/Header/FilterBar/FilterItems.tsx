@@ -1,0 +1,20 @@
+export const FilterItems = [
+    {episode_id: 1,
+    linkText: 'I',
+},
+{episode_id: 2,
+    linkText: 'II',
+},
+{episode_id: 3,
+    linkText: 'III',
+},
+{episode_id: 4,
+    linkText: 'IV',
+},
+{episode_id: 5,
+    linkText: 'V',
+},
+{episode_id: 6,
+    linkText: 'VI',
+}
+]

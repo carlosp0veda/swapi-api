@@ -1,0 +1,15 @@
+.topHeaderGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    align-content: space-between;
+    padding: 16px 0;
+}
+
+
+@media screen and (max-width: 669px) {
+
+    .topHeaderGrid {
+       grid-template-columns:repeat(2, 1fr) ;
+    }
+}

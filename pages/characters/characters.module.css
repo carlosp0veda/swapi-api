@@ -1,0 +1,20 @@
+.link {
+    list-style: none;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 4px 0;
+}
+
+.pageTitle {
+    margin-left: 32px;
+}
+
+.link:hover {
+    color: #f9d71c;
+}
+
+.categoryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 256px);
+    justify-content: center;
+}
