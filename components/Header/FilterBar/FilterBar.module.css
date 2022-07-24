@@ -12,9 +12,12 @@
     width: 100%;
     font-size: 2rem;
     cursor: pointer;
-    font-family: 'Star Jedi', sans-serif;
+    font-family:'starjedi', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border: 1px solid white;
     letter-spacing: 4px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
     
     
 }
