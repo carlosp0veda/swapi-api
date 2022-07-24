@@ -24,15 +24,18 @@ const CharacterCard = ({character, image}:CharacterCardProps) => {
   return (
     <>
         { character && image && 
-        <article className={styles.card}>
-         <Image width={250} height={300} onError={()=>setValidImage('https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png')} src={validImage || 'https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png'} alt={character.name} />
-         <div className={styles.cardInfo}>
             <Link href={`/characters/${character.name.toLowerCase().replace(/\s/g, '%20')}`}>
-                <a>{character.name}</a>
-            </Link>
-            <span>{homeplanet ? `(${homeplanet})` : 'Loading...'}</span>
-            </div>
-         </article>}
+            <article className={styles.card}>
+             <Image width={250} height={300} onError={()=>setValidImage('https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png')} src={validImage || 'https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png'} alt={character.name} />
+             <div className={styles.cardInfo}>
+
+                    <a className={styles.name}>{character.name}</a>
+
+                <span>{homeplanet ? `(${homeplanet})` : 'Loading...'}</span>
+                </div>
+             </article>
+         </Link>
+         }
     </>
   )
 }

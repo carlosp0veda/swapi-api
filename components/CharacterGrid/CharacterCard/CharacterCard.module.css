@@ -10,6 +10,11 @@
     background-color: rgba(0, 0, 0, 0.6);
 }
 
+.card:hover {
+    box-shadow: inset 0px 0px 8px rgb(245, 227, 128);
+    cursor: pointer;
+}
+
 .cardInfo {
     display: flex;
     align-items: center;
@@ -24,8 +29,9 @@
     padding: 8px 0px;
 }
 
-.card a:hover {
+.card:hover .name {
     color: #f9d71c;
+    text-decoration: underline;
 }
 
 .cardInfo span {
