@@ -1,5 +1,5 @@
 .container {
-    width: clamp(192px, 300px ,220px);
+    width: clamp(220px, 60vw ,320px);
     height: 64px;
     display: flex;
     background-color: #1e272e;
@@ -18,7 +18,7 @@
   /*   display: inline; */
     background: none;
     color: #f7f7f7;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     border-radius: 2rem;
     outline: none;
     border: none;

@@ -8,6 +8,7 @@
     font-weight: 400;
     font-size: 300%;
     opacity: 0;
+    font-family: 'starjedi', sans-serif;
 }
 
 .openingCrawlContainer { 
@@ -84,6 +85,10 @@
   width: 70%;
   bottom: 0;
   left: 50%;
+}
+
+.title {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .board:after {    
