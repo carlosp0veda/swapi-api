@@ -49,6 +49,7 @@ const Home = (props: HomePageProps) => {
 
   useEffect(()=> {
     setSelectedEpisode(null)
+    setIsOpeningCrawl(false)
     setIsLoading(true)
     const episode = router?.query?.episode_id || null
     const search = router?.query?.search || null

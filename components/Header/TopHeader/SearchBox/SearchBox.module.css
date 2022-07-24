@@ -1,5 +1,5 @@
 .container {
-    width: max(128px, 350px);
+    width: min(128px, 350px);
     height: 64px;
     display: flex;
     background-color: #1e272e;

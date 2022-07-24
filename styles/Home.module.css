@@ -57,29 +57,19 @@
 
 .loadMoreButton {
   font-size: 22px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: rgb(250, 250, 250, 0.1);
+  color: #f9d71c;
   width: 150px;
   height: 64px;
   margin: 0 auto;
   border-radius: 8px;
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
-}
+@media screen and (max-width: 669px) {
 
-@media (prefers-color-scheme: dark) {
-  .card,
-  .footer {
-    border-color: #222;
-  }
-  .code {
-    background: #111;
-  }
-  .logo img {
-    filter: invert(1);
+  .loadMoreButton {
+    font-size: 18px;
   }
 }
 
