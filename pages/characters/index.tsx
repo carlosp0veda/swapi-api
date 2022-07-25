@@ -32,7 +32,7 @@ const AllCharactersPage = ({characters}:AllCharactersPageProps) => {
     <div>
       <h2 className={styles.pageTitle}>ALL CHARACTERS</h2>
       <section className={styles.categoryGrid}>
-        {alphabet.map(letter => <ul key={letter}>{letter} {orderedNames.filter(n => n.charAt(0) === letter).map(n => <Link href={`/characters/${n}`} key={n}><li className={styles.link}>{n}</li></Link>)}</ul>)}
+        {alphabet.map(letter => <ul key={letter} className={styles.categoryTitle}>{letter} <hr/>{orderedNames.filter(n => n.charAt(0) === letter).map(n => <Link href={`/characters/${n}`} key={n}><li className={styles.link}>{n}</li></Link>)}</ul>)}
       </section> 
     </div>
   )

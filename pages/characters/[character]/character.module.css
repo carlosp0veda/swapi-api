@@ -5,6 +5,53 @@
     margin: 0 auto;
 }
 
+.breadcrumbContainer{
+    width: 100vw;
+    padding-left: 32px;
+    padding-top: 32px;
+}
+
+.AllCharactersLink {
+    font-size: 16px;
+    padding-right: 16px;
+    cursor: inherit;
+    display: inline-block;
+    text-decoration: underline;
+}
+
+.AllCharactersLink:hover {
+    color: #f9d71c;
+}
+
+.AllCharactersLink::before{
+    content: '';
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    margin-right: 8px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.SelectedCharacter {
+    font-size: 16px;
+    cursor: inherit;
+    display: inline-block;
+}
+
+.SelectedCharacter::before{
+    content: '';
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    margin-right: 8px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+
 .characterCard {
     display: grid;
     grid-auto-flow: column;
@@ -33,6 +80,7 @@
     width: 100%;
     text-align: center;
     font-size: 18px;
+    letter-spacing: 2px;
 }
 
 .desktopCharacterNameMandalorian {

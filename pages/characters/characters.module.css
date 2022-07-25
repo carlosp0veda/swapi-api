@@ -1,7 +1,6 @@
 .link {
-    list-style: none;
-    text-decoration: underline;
-    
+    list-style: disc;
+    text-decoration: underline; 
     padding: 4px 0;
     color: #fff;
 }
