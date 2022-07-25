@@ -24,3 +24,7 @@
 .navLink:hover{
     box-shadow: inset 0px 0px 8px rgb(255, 255, 255);
 }
+
+.navLink:active{
+    box-shadow: inset 0px 0px 8px rgb(255, 255, 255);
+}

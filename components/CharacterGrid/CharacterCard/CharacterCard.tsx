@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react'
-import {useAxiosFetch} from '../../../utils/useAxios'
+import {useAxiosFetch} from '../../../hooks/useAxios'
 import styles from './CharacterCard.module.css'
 import {Character, CharacterImage} from '../../../interfaces/interfaces';
 import Image from 'next/image'

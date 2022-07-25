@@ -27,7 +27,7 @@ const Home = (props: HomePageProps) => {
   const [visibleResults, setVisibleResults] = useState<number>(12);
 
   const router = useRouter()
-   
+
   const fetchSearch = useCallback(async () => {
     if (router.query.search) {
     setIsLoading(true)
@@ -79,7 +79,7 @@ const Home = (props: HomePageProps) => {
 
   return (
       <section className={styles.main}>
-        {!isLoading && !isOpeningCrawl && selectedEpisode ? <h2>{`${selectedEpisode.title} characters`}</h2> : null}
+        {!isLoading && !isOpeningCrawl && selectedEpisode ? <h2 className={styles.episodeTitle}>{selectedEpisode.title} Characters</h2> : null}
        {!isLoading && !isOpeningCrawl ? <div><CharacterGrid characters={state.characters.slice(0, visibleResults)} images={state.images}/> {visibleResults < state.characters.length && <div className={styles.loadMoreContainer}>
     <button
       className={styles.loadMoreButton}

@@ -6,7 +6,7 @@ import Image from 'next/image'
 import {getAllCharacters, getCharacter} from '../../../utils/swapiHelper'
 import {Character, CharacterImage, Film} from '../../../interfaces/interfaces'
 import axios from 'axios'
-import { useAxiosFetch } from '../../../utils/useAxios'
+import { useAxiosFetch } from '../../../hooks/useAxios'
 import Link from 'next/link'
 
 interface CharacterPageProps {
@@ -41,11 +41,12 @@ const Character = ({character, image}: CharacterPageProps) => {
       
     <div className={styles.characterCard}>
     <h2 className={styles.mobileCharacterName}>{character.name}</h2>
+    <h3 className={styles.mobileCharacterNameMandalorian}>{character.name}</h3>
       <div className={styles.imageWrapper}>
-        <Image src={image.image} alt={character.name} width={300} height={450}/>
+        <Image src={image.image} alt={character.name} width={300} height={450} />
       </div>
       <div className={styles.characterInfo}>
-        <h2 className={styles.desktopCharacterName}>{character.name}</h2>
+        <h2 className={styles.desktopCharacterName}>{character.name}<span className={styles.desktopCharacterNameMandalorian}><br/>{character.name}</span></h2>
         <ul><h3 className={styles.contentTitle}>FILMS</h3> <br/>{!isPending ? films.map(f => <Link href={`/?episode_id=${f.episode_id}`} key={f.title}><li className={styles.link}>{f.title}</li></Link>) : <span>Loading...</span>}</ul>
         <h3 className={styles.contentTitle}>HOMEWORLD <br/><span className={styles.contentText}>{homeplanet}</span></h3>
         <h3 className={styles.contentTitle}>BIRTH YEAR <br/><span className={styles.contentText}>{character.birth_year}</span></h3>
