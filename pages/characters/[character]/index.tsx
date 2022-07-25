@@ -13,23 +13,14 @@ import {motion} from 'framer-motion'
 interface CharacterPageProps {
   character: Character
   image: CharacterImage
+  films: Film[]
 }
 
-const Character = ({character, image}: CharacterPageProps) => {
-  const [films, setFilms] = useState<Film[]>([])
-  const [isPending, setIsPending] = useState<boolean>(true)
+const Character = ({character, image, films}: CharacterPageProps) => {
+  const [onFilms, setOnFilms] = useState<Film[]>(films)
   const [homeplanet, setHomeplanet] = useState(null)
   const {loading, data, error}: any = useAxiosFetch(character?.homeworld, 30000)
 
-  const fetchFilms = useCallback(async () => {
-    const films =  character.films.map((f: string) => axios.get(f).then(res => res.data).catch(e => new Error(e)).finally(() => setIsPending(false)))
-    const resolvedPromises = await Promise.all(films)
-    setFilms(resolvedPromises)
-  }, [character])
-  
-  useEffect(()=>{
-    fetchFilms()
-  },[fetchFilms])
 
   useEffect(()=>{
     if (data) {
@@ -40,7 +31,7 @@ const Character = ({character, image}: CharacterPageProps) => {
   return (
     <>
       <div className={styles.breadcrumbContainer}><Link href={'/characters'}><span className={styles.AllCharactersLink}>Characters </span></Link><span className={styles.SelectedCharacter}>{character.name}</span></div>
-      <motion.section  initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{opacity: 0}} transition={{ duration: 0.9 }} className={styles.characterContainer}>
+      <motion.section  initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} exit={{opacity: 0, scale:0}} transition={{ duration: 0.8 }} className={styles.characterContainer}>
       <div className={styles.characterCard}>
       <h2 className={styles.mobileCharacterName}>{character.name}</h2>
       <h3 className={styles.mobileCharacterNameMandalorian}>{character.name}</h3>
@@ -49,7 +40,7 @@ const Character = ({character, image}: CharacterPageProps) => {
         </div>
         <div className={styles.characterInfo}>
           <h2 className={styles.desktopCharacterName}>{character.name}<span className={styles.desktopCharacterNameMandalorian}><br/>{character.name}</span></h2>
-          <ul><h3 className={styles.contentTitle}>FILMS</h3> <br/>{!isPending ? films.map(f => <Link href={`/?episode_id=${f.episode_id}`} key={f.title}><li className={styles.link}>{f.title}</li></Link>) : <span>Loading...</span>}</ul>
+          <ul><h3 className={styles.contentTitle}>FILMS</h3> <br/>{films.map(f => <Link href={`/?episode_id=${f.episode_id}`} key={f.title}><li className={styles.link}>{f.title}</li></Link>)}</ul>
           <h3 className={styles.contentTitle}>HOMEWORLD <br/><span className={styles.contentText}>{homeplanet}</span></h3>
           <h3 className={styles.contentTitle}>BIRTH YEAR <br/><span className={styles.contentText}>{character.birth_year}</span></h3>
           <h3 className={styles.contentTitle}>LAST UPDATED  <br/><span className={styles.contentText}>{character.edited.substring(0,10)}</span></h3>
@@ -73,9 +64,10 @@ return {
 export const getStaticProps: GetStaticProps = async (context) => {
 
   const data = await getCharacter(context.params?.character)
+  const films =  await data[0].films.map((f: string) => axios.get(f).then(res => res.data).catch(e => new Error(e)))
 
     return{
-      props: {character: data.results[0], image: Images.find(i => i.name === data.results[0].name)},
+      props: {character: data.results[0], image: Images.find(i => i.name === data.results[0].name), films: films},
       revalidate: 300
     }
 }
