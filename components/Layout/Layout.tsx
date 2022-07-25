@@ -16,12 +16,12 @@ function Layout({children}: LayoutProps) {
             <title>Star Wars API</title>
         </Head>
         <div className={styles.windowWrapper}>
-        <div className={styles.twinkling}></div>
-        <div className={styles.mainGrid}>
-                <Header/>
-                <main>{children}</main>
-                <Footer/>
-        </div>
+            <div className={styles.mainGrid}>
+                    <Header/>
+                    <main>{children}</main>
+                    <Footer/>
+            </div>
+            <div className={styles.twinkling}/>
         </div>
         </>
     )
