@@ -1,0 +1,46 @@
+.custom404Container {
+    text-align: center;
+    margin: 0 auto;
+    padding: 32px 0;
+}
+
+.number, .symbol, .text {
+    font-family: 'starjedi', sans-serif;
+}
+
+.number {
+    font-size: 128px;
+    margin: 0 auto;
+}
+
+.text {
+    font-size: 5vw;
+    margin-bottom: 32px;
+}
+
+.symbol {
+    font-size: 96px;
+    display: inline-block;
+    padding: 0 4px;
+    animation: rotation 8s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+
+
+
+  .homeButton {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 16px 24px;
+    color: #f9d71c;
+    border: 2px solid white;
+    box-shadow: inset 0px 0px 8px rgb(250,250,250);
+}
