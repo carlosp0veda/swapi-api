@@ -21,6 +21,10 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.active {
+    color: #f9d71c;
+}
+
 .navLink:hover{
     box-shadow: inset 0px 0px 8px rgb(255, 255, 255);
 }

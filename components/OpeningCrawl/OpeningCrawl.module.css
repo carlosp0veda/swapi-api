@@ -72,17 +72,16 @@
 /* Set the font, lean the board, position it */
 .board {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  transform:  translateX(-50%);
+  transform: translateX(-50%);
   transform-origin: 50% 100%;
   text-align: justify;
   position: absolute;
-  perspective: 400px;
-  /* margin-left: -9em; */
+  perspective: 500px;
   font-weight: bold;
   overflow: hidden;
   font-size: 350%;
   height: 40em;
-  width: 70%;
+  width: max(500px, 60%);
   bottom: 0;
   left: 50%;
 }
@@ -126,14 +125,13 @@
 @media screen and (max-width: 669px) {
 
     .board {
-        width: 100%;
-        font-size: 200%;
+        width: 92%;
+        font-size: 225%;
         left: 8%;
         transform:  translateX(-4%);
-        perspective: 400px;
     }
     .content {
-        animation: scroll 50s linear 16s;
+        animation: scroll 40s linear 16s;
     }
 
     .intro {
@@ -143,6 +141,5 @@
     .logo {
         left: 15%;
         top: 10%;
-        /* animation: logo 7s ease-out 7s; */
     }
 }

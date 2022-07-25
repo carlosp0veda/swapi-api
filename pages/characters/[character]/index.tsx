@@ -8,6 +8,7 @@ import {Character, CharacterImage, Film} from '../../../interfaces/interfaces'
 import axios from 'axios'
 import { useAxiosFetch } from '../../../hooks/useAxios'
 import Link from 'next/link'
+import {motion} from 'framer-motion'
 
 interface CharacterPageProps {
   character: Character
@@ -39,7 +40,7 @@ const Character = ({character, image}: CharacterPageProps) => {
   return (
     <>
       <div className={styles.breadcrumbContainer}><Link href={'/characters'}><span className={styles.AllCharactersLink}>Characters </span></Link><span className={styles.SelectedCharacter}>{character.name}</span></div>
-      <section className={styles.characterContainer}>
+      <motion.section  initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{opacity: 0}} transition={{ duration: 0.9 }} className={styles.characterContainer}>
       <div className={styles.characterCard}>
       <h2 className={styles.mobileCharacterName}>{character.name}</h2>
       <h3 className={styles.mobileCharacterNameMandalorian}>{character.name}</h3>
@@ -54,7 +55,7 @@ const Character = ({character, image}: CharacterPageProps) => {
           <h3 className={styles.contentTitle}>LAST UPDATED  <br/><span className={styles.contentText}>{character.edited.substring(0,10)}</span></h3>
         </div>
       </div>
-    </section>
+    </motion.section>
     </>
   )
 }

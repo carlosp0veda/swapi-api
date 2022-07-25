@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import styles from './characters.module.css'
 import { Character } from '../../interfaces/interfaces'
 import { getAllCharacters } from '../../utils/swapiHelper'
+import { motion } from 'framer-motion'
 
 interface AllCharactersPageProps {
   characters: Character[]
@@ -29,12 +30,12 @@ const AllCharactersPage = ({characters}:AllCharactersPageProps) => {
 
 
   return (
-    <div>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{opacity:0 }} transition={{ duration: 0.9}}>
       <h2 className={styles.pageTitle}>ALL CHARACTERS</h2>
       <section className={styles.categoryGrid}>
         {alphabet.map(letter => <ul key={letter} className={styles.categoryTitle}>{letter} <hr/>{orderedNames.filter(n => n.charAt(0) === letter).map(n => <Link href={`/characters/${n}`} key={n}><li className={styles.link}>{n}</li></Link>)}</ul>)}
       </section> 
-    </div>
+    </motion.div>
   )
 }
 
