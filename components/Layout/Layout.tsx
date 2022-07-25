@@ -8,38 +8,19 @@ interface LayoutProps {
     children: React.ReactNode
 }
 
-
-
 function Layout({children}: LayoutProps) {
 
-//       const [sideDrawer, setSideDrawer] = useState({
-//     showSideDrawer: false,
-//   });
-
-//   const sideDrawerCloseHandler = () => {
-//     setSideDrawer({ showSideDrawer: false });
-//   };
-
-//   const toggleSideDrawerHandler = () => {
-//     setSideDrawer((prevState) => {
-//       return { showSideDrawer: !prevState.showSideDrawer };
-//     });
-//   };
-
-    const styleList = [styles.mainGrid, styles.stars]
     return (
         <>
         <Head>
             <title>Star Wars API</title>
         </Head>
-        <div className={styles.twinkling}></div>
-        <div className={styleList.join(' ')}>
-            <div>
+        <div className={styles.mainGrid}>
                 <Header/>
-                <main style={{zIndex: 99}}>{children}</main>
+                <main>{children}</main>
                 <Footer/>
-            </div>
         </div>
+        <div className={styles.twinkling}></div>
         </>
     )
 }
