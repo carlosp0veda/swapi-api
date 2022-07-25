@@ -116,7 +116,6 @@ const OpeningCrawl = ({episode, title, text}: OpeningCrawlProps) => {
             <p>{text}</p>        
           </div>  
         </div>
-
     </div>
   )
 }

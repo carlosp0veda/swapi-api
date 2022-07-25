@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useRouter } from 'next/router'
 import {getAllCharacters, getCharacters, getFilms} from '../utils/swapiHelper'
 import Images from './api/characters_images.json'
@@ -23,7 +24,7 @@ const Home = (props: HomePageProps) => {
   const [state, dispatch] = useReducer(reducer, props)
   const [isOpeningCrawl, setIsOpeningCrawl] = useState<boolean>(false)
   const [selectedEpisode, setSelectedEpisode] = useState<Film | null>(null)
-  const [searchResults, setSearchResults] = useState<Character[]>([])
+  const [searchResults, setSearchResults] = useState<Character[] | null>(null)
   const [visibleResults, setVisibleResults] = useState<number>(12);
 
   const router = useRouter()
@@ -80,6 +81,7 @@ const Home = (props: HomePageProps) => {
   return (
       <section className={styles.main}>
         {!isLoading && !isOpeningCrawl && selectedEpisode ? <h2 className={styles.episodeTitle}>{selectedEpisode.title} Characters</h2> : null}
+        {searchResults && !searchResults.length && <p className={styles.searchNotFound}>ooops! Can't find that character in the galaxy!</p>}
        {!isLoading && !isOpeningCrawl ? <div><CharacterGrid characters={state.characters.slice(0, visibleResults)} images={state.images}/> {visibleResults < state.characters.length && <div className={styles.loadMoreContainer}>
     <button
       className={styles.loadMoreButton}
