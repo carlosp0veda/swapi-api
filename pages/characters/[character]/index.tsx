@@ -64,7 +64,7 @@ return {
 export const getStaticProps: GetStaticProps = async (context) => {
 
   const data = await getCharacter(context.params?.character)
-  const films =  await data[0].films.map((f: string) => axios.get(f).then(res => res.data).catch(e => new Error(e)))
+  const films =  await data.results[0].films.map((f: string) => axios.get(f).then(res => res.data).catch(e => new Error(e)))
 
     return{
       props: {character: data.results[0], image: Images.find(i => i.name === data.results[0].name), films: films},
