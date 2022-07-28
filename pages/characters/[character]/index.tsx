@@ -14,9 +14,10 @@ interface CharacterPageProps {
   character: Character
   image: CharacterImage
   films: Film[]
+  planet: string
 }
 
-const Character = ({character, image, films}: CharacterPageProps) => {
+const Character = ({character, image, films, planet}: CharacterPageProps) => {
   const [homeplanet, setHomeplanet] = useState(null)
   const {data}: any = useAxiosFetch(character?.homeworld, 30000)
 
@@ -39,7 +40,7 @@ const Character = ({character, image, films}: CharacterPageProps) => {
         <div className={styles.characterInfo}>
           <h2 className={styles.desktopCharacterName}>{character.name}<span className={styles.desktopCharacterNameMandalorian}><br/>{character.name}</span></h2>
           <ul><h3 className={styles.contentTitle}>FILMS</h3> <br/>{films.map(f => <Link href={`/?episode_id=${f.episode_id}`} key={f.title}><li className={styles.link}>{f.title}</li></Link>)}</ul>
-          <h3 className={styles.contentTitle}>HOMEWORLD <br/><span className={styles.contentText}>{homeplanet}</span></h3>
+          <h3 className={styles.contentTitle}>HOMEWORLD <br/><span className={styles.contentText}>{planet}</span></h3>
           <h3 className={styles.contentTitle}>BIRTH YEAR <br/><span className={styles.contentText}>{character.birth_year}</span></h3>
           <h3 className={styles.contentTitle}>LAST UPDATED  <br/><span className={styles.contentText}>{character.edited.substring(0,10)}</span></h3>
         </div>
@@ -62,11 +63,12 @@ return {
 export const getStaticProps: GetStaticProps = async (context) => {
 
   const data = await getCharacter(context.params?.character)
-  const promises =  data.results[0].films.map((f: string) => axios.get(f).then(res => res.data).catch(e => new Error(e)))
+  const promises =  await data.results[0].films.map((f: string) => axios.get(f).then(res => res.data).catch(e => new Error(e)))
   const films = await Promise.all(promises)
+  const planet = await axios.get(data.results[0].homeworld).then(res => res.data).catch(e => new Error(e))
 
     return{
-      props: {character: data.results[0], image: Images.find(i => i.name === data.results[0].name), films},
+      props: {character: data.results[0], image: Images.find(i => i.name === data.results[0].name), films, planet: planet.name},
       revalidate: 300
     }
 }
