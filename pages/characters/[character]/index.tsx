@@ -18,15 +18,6 @@ interface CharacterPageProps {
 }
 
 const Character = ({character, image, films, planet}: CharacterPageProps) => {
-  const [homeplanet, setHomeplanet] = useState(null)
-  const {data}: any = useAxiosFetch(character?.homeworld, 30000)
-
-  useEffect(()=>{
-    if (data) {
-        setHomeplanet(data.name)
-    }
-},[data])
-
   return (
     <>
       <div className={styles.breadcrumbContainer}><Link href={'/characters'}><span className={styles.AllCharactersLink}>Characters </span></Link><span className={styles.SelectedCharacter}>{character.name}</span></div>
